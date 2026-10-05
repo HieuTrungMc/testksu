@@ -28,6 +28,32 @@ on:
         default: ''
         type: string
   workflow_dispatch:
+    inputs:
+      expected_size2:
+        description: 'Second expected signature size'
+        required: false
+        default: ''
+        type: string
+      expected_hash2:
+        description: 'Second expected signature hash'
+        required: false
+        default: ''
+        type: string
+      expected_size:
+        description: 'Primary expected signature size (custom manager builds)'
+        required: false
+        default: ''
+        type: string
+      expected_hash:
+        description: 'Primary expected signature hash (custom manager builds)'
+        required: false
+        default: ''
+        type: string
+      ksu_version:
+        description: 'Pre-computed KSU_VERSION (30000 + git_count)'
+        required: false
+        default: ''
+        type: string
 jobs:
   build-lkm:
     strategy:
